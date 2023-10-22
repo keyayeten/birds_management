@@ -1,0 +1,46 @@
+[
+    {
+        "name": "tucan",
+        "feathers_color": "rainbow"
+    },
+    {
+        "name": "parrot",
+        "feathers_color": "red"
+    },
+    {
+        "name": "eagle",
+        "feathers_color": "desert"
+    },
+    {
+        "name": "stork",
+        "feathers_color": "white"
+    },
+    {
+        "name": "cock",
+        "feathers_color": "pink"
+    },
+    {
+        "name": "jackdaw",
+        "feathers_color": "black"
+    },
+    {
+        "name": "albatross",
+        "feathers_color": "white"
+    },
+    {
+        "name": "rook",
+        "feathers_color": "black"
+    },
+    {
+        "name": "goose",
+        "feathers_color": "white"
+    },
+    {
+        "name": "lark",
+        "feathers_color": "white"
+    },
+    {
+        "name": "woodpecker",
+        "feathers_color": "black"
+    }
+]
