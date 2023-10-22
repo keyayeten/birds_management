@@ -1,0 +1,36 @@
+{
+    "ClientConfiguration": {
+        "ConfigurationName": "birds_conf",
+        "ConfigurationDescription": "Разработка новой конфигурации SimpleUI",
+        "ConfigurationVersion": "0.0.1",
+        "Processes": [
+            {
+                "type": "Process",
+                "ProcessName": "Новый процесс",
+                "PlanFactHeader": "План-факт",
+                "DefineOnBackPressed": false,
+                "hidden": false,
+                "login_screen": false,
+                "SC": false,
+                "Operations": [
+                    {
+                        "Name": "Новый экран",
+                        "type": "Operation",
+                        "Elements": [],
+                        "Timer": false,
+                        "hideToolBarScreen": false,
+                        "noScroll": false,
+                        "handleKeyUp": false,
+                        "hideBottomBarScreen": false,
+                        "onlineOnStart": false,
+                        "onlineOnInput": false
+                    }
+                ]
+            }
+        ],
+        "ConfigurationSettings": {
+            "uid": "de28577e97764370a839dbd5477e7185"
+        },
+        "ConfigurationTags": ""
+    }
+}
