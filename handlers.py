@@ -122,7 +122,7 @@ def customcards_on_open(hashMap, _files=None, _data=None):
                         "width": "wrap_content",
                         "height": "wrap_content",
                         "weight": 0
-                }
+                    }
             ]
         }
 
@@ -132,9 +132,9 @@ def customcards_on_open(hashMap, _files=None, _data=None):
     j["customcards"]["cardsdata"] = []
     ncl = noClass("birds_nosql")
     birds = ncl.get("birds")
-    for bird in BASIC_BIRDS:
+    for bird in birds:
 
-        c = {
+        unit = {
             "key": bird["name"],
 
             "descr": bird["name"],
@@ -143,7 +143,7 @@ def customcards_on_open(hashMap, _files=None, _data=None):
             "string2": bird["feathers_color"]
         }
 
-        j["customcards"]["cardsdata"].append(c)
+        j["customcards"]["cardsdata"].append(unit)
 
     if not hashMap.containsKey("cards"):
         hashMap.put("cards", json.dumps(
@@ -154,7 +154,8 @@ def customcards_on_open(hashMap, _files=None, _data=None):
 
 def customcards_touch(hashMap, _files=None, _data=None):
     hashMap.put("toast", "res="+str(hashMap.get("listener")+"/" +
-                str(hashMap.get("layout_listener"))+"/"+str(hashMap.get("card_data"))))
+                str(hashMap.get("layout_listener"))
+                + "/"+str(hashMap.get("card_data"))))
     return hashMap
 
 
