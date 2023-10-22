@@ -17,7 +17,7 @@
         "PyCommonConfiguration": "",
         "FaceRecognitionURL": "",
         "NoSQLDBName": "",
-        "ConfigurationName": "Новые возможности списков июль 2022",
+        "ConfigurationName": "Birds data",
         "ConfigurationDescription": "Возможности кастомных списков: активные элменты, поиск и т.д.",
         "ConfigurationSettings": {
             "uid": "24ce1cd9_80ca_11ec_bfe6_e0d55eacc970_1",

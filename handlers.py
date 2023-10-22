@@ -78,18 +78,6 @@ def customcards_on_open(hashMap, _files=None, _data=None):
                         "weight": "0",
                         "Elements": [
                             {
-                                "type": "CheckBox",
-                                "Value": "@cb1",
-                                "NoRefresh": False,
-                                "document_type": "",
-                                "mask": "",
-                                "Variable": "cb1",
-                                "BackgroundColor": "#DB7093",
-                                "width": "match_parent",
-                                "height": "wrap_content",
-                                "weight": 2
-                            },
-                            {
                                 "type": "LinearLayout",
                                 "orientation": "vertical",
                                 "height": "wrap_content",
@@ -113,40 +101,8 @@ def customcards_on_open(hashMap, _files=None, _data=None):
                                         "document_type": "",
                                         "mask": "",
                                         "Variable": ""
-                                    },
-                                    {
-                                        "type": "Button",
-                                        "show_by_condition": "",
-                                        "Value": "#f290",
-                                        "TextColor": "#DB7093",
-                                        "Variable": "btn_tst1",
-                                        "NoRefresh": False,
-                                        "document_type": "",
-                                        "mask": ""
-
-                                    },
-                                    {
-                                        "type": "Button",
-                                        "show_by_condition": "",
-                                        "Value": "#f469",
-                                        "TextColor": "#DB7093",
-                                        "Variable": "btn_tst2",
-                                        "NoRefresh": False,
-                                        "document_type": "",
-                                        "mask": ""
-
                                     }
                                 ]
-                            },
-                            {
-                                "type": "PopupMenuButton",
-                                "show_by_condition": "",
-                                "Value": "Удалить;Проверить",
-                                "NoRefresh": False,
-                                "document_type": "",
-                                "mask": "",
-                                "Variable": "menu_delete"
-
                             }
                         ]
                     },
