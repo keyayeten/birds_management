@@ -40,7 +40,7 @@
         "Processes": [
             {
                 "type": "Process",
-                "ProcessName": "Кастомные карточки",
+                "ProcessName": "Птичьи карточки",
                 "PlanFactHeader": "План-факт",
                 "DefineOnBackPressed": false,
                 "hidden": false,

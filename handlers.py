@@ -174,6 +174,8 @@ def customcards_on_open(hashMap, _files=None, _data=None):
     }
 
     j["customcards"]["cardsdata"] = []
+    ncl = noClass("birds_nosql")
+    birds = ncl.get("birds")
     for bird in BASIC_BIRDS:
 
         c = {
@@ -204,16 +206,16 @@ def refresh_nosql_bd(hashMap, _files=None, _data=None):
     if hashMap.get("listener") == "refresh_button":
         ncl = noClass("birds_nosql")
 
-        # url = 'http://127.0.0.1:5000/birds'
+        url = 'http://127.0.0.1:5000/birds'
 
-        # response = requests.get(url)
+        response = requests.get(url)
 
-        # if response.status_code == 200:
-        #     json_data = response.json()
-        # else:
-        #     json_data = []
+        if response.status_code == 200:
+            json_data = response.json()
+        else:
+            json_data = []
 
-        for bird in BASIC_BIRDS:
+        for bird in json_data:
             ncl.put("birds", json.dumps(bird, ensure_ascii=False), True)
         hashMap.put("toast", str(ncl.get("birds")))
 
