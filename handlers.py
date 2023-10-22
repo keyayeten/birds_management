@@ -165,7 +165,7 @@ def refresh_nosql_bd(hashMap, _files=None, _data=None):
 
         url = 'http://127.0.0.1:5000/birds'
 
-        response = requests.get(url)
+        response = requests.get(url, timeout=2)
 
         if response.status_code == 200:
             json_data = response.json()
@@ -176,4 +176,20 @@ def refresh_nosql_bd(hashMap, _files=None, _data=None):
             ncl.put("birds", json.dumps(bird, ensure_ascii=False), True)
         hashMap.put("toast", str(ncl.get("birds")))
 
+    return hashMap
+
+
+def input_new_bird(hashMap, _files=None, _data=None):
+    ncl = noClass("birds_nosql")
+    bird_data = {"name": hashMap.get("bname"),
+                 "feathers_color": hashMap.get("bfeathers_color")}
+    if hashMap.get("listener") == "accept_inp_bird":
+        ncl.put("birds", json.dumps(bird_data,
+                                    ensure_ascii=False),
+                True)
+
+        url = 'http://127.0.0.1:5000/birds'
+        requests.post(url, json=bird_data, timeout=2)
+
+    hashMap.put("toast", str(ncl.get("birds")))
     return hashMap

@@ -42,5 +42,9 @@
     {
         "name": "woodpecker",
         "feathers_color": "black"
+    },
+    {
+        "name": "new_test",
+        "feathers_color": "test_color"
     }
 ]
