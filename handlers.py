@@ -182,7 +182,7 @@ def refresh_nosql_bd(hashMap, _files=None, _data=None):
     return hashMap
 
 
-def birds_on_create(hashMap,_files=None,_data=None):
+def birds_on_create(hashMap, _files=None, _data=None):
     if not hashMap.containsKey("bname"):
         hashMap.put("bname", "Например: parrot")
     if not hashMap.containsKey("bfeathers_color"):
