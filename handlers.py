@@ -131,7 +131,7 @@ def customcards_on_open(hashMap, _files=None, _data=None):
 
     j["customcards"]["cardsdata"] = []
     ncl = noClass("birds_nosql")
-    birds = ncl.get("birds")
+    birds = json.loads(ncl.get("birds"))
     for bird in birds:
 
         unit = {
@@ -165,17 +165,28 @@ def refresh_nosql_bd(hashMap, _files=None, _data=None):
 
         url = 'http://127.0.0.1:5000/birds'
 
-        response = requests.get(url, timeout=2)
-
-        if response.status_code == 200:
-            json_data = response.json()
-        else:
-            json_data = []
+        try:
+            response = requests.get(url, timeout=2)
+            if response.status_code == 200:
+                json_data = response.json()
+            else:
+                json_data = []
+        except Exception as exc:
+            hashMap.put("toast", f"{str(exc)} external data isn't availaible")
+            return hashMap
 
         for bird in json_data:
             ncl.put("birds", json.dumps(bird, ensure_ascii=False), True)
         hashMap.put("toast", str(ncl.get("birds")))
 
+    return hashMap
+
+
+def birds_on_create(hashMap,_files=None,_data=None):
+    if not hashMap.containsKey("bname"):
+        hashMap.put("bname", "Например: parrot")
+    if not hashMap.containsKey("bfeathers_color"):
+        hashMap.put("bfeathers_color", "Например: orange")
     return hashMap
 
 
@@ -187,9 +198,12 @@ def input_new_bird(hashMap, _files=None, _data=None):
         ncl.put("birds", json.dumps(bird_data,
                                     ensure_ascii=False),
                 True)
-
-        url = 'http://127.0.0.1:5000/birds'
-        requests.post(url, json=bird_data, timeout=2)
+        try:
+            url = 'http://127.0.0.1:5000/birds'
+            requests.post(url, json=bird_data, timeout=2)
+        except Exception as exc:
+            hashMap.put("toast", f"{str(exc)} external data isn't availaible")
+            return hashMap
 
     hashMap.put("toast", str(ncl.get("birds")))
     return hashMap
